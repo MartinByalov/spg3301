@@ -1,73 +1,46 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
     <meta charset="UTF-8">
     <title>乃乇刀のｲﾑｷ尺ﾑﾉり</title>
     <link rel="stylesheet" href="styles.css">
 
-    <style>
-        body {
-            background-color: #0d0d0d;
-            color: #e0e0e0;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-            padding: 50px;
-            position: relative;
-            height: 100vh;
-        }
-        .hidden-message {
-            margin-top: 50px;
-            font-size: 20px;
-            letter-spacing: 2px;
-        }
-        .hint {
-            margin-top: 30px;
-            font-size: 16px;
-            color: #777;
-        }
-        .binary-hint {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            color: #444;
-            font-size: 14px;
-            cursor: pointer;
-            user-select: none;
-        }
-    </style>
 </head>
+
 <body>
 
-    
-    <p>… Там, където все още бушува голямата война — същата, заради която преди няколко века всички митични същества изчезнаха от хорската реалност. </p>
+
+    <p>… Там, където все още бушува голямата война — същата, заради която преди няколко века всички митични същества
+        изчезнаха от хорската реалност. </p>
     <img src="506C61746F.jpg">
+    <p><a href="https://en.wikipedia.org/wiki/Voynich_manuscript" target="_blank" style="color: white;">✔ Ръкопис на
+            Войнич</a></p>
+    <p id="keyDisplay">
+        Keys found:
+        <span id="keys">
+            🔑
+        </span>
+    </p>
+
+    <input type="text" id="answerInput" placeholder="???????"
+        style="padding: 5px; font-family: monospace; width: 300px;">
+    <button onclick="checkAnswer()" style="margin-left: 10px; padding: 5px;">ℵ</button>
+
     <div class="hidden-message">
         V2hhdCB5b3Ugc2VlayBpcyBub3Qgb3V0c2lkZSBidXQgaW5zaWRlLg==
     </div>
 
-    
+
 
     <!-- Скритият бинарен код в долния десен ъгъл -->
     <div class="binary-hint" onclick="copyBinary()">
-    0...
+        0...
     </div>
 
-    <script>
-        let clickCount = 0;
-    
-        function copyBinary() {
-            clickCount++;
-            if (clickCount === 17) {
-                const binaryText = "01110011 01110100 01110010 01100101 01101100 01101111 01100011 01101000 01101110 01101001 01101011";
-                navigator.clipboard.writeText(binaryText).then(() => {
-                    alert("Скритият код е копиран в клипборда!");
-                }).catch(err => {
-                    console.error('Грешка при копиране:', err);
-                });
-            }
-        }
-    </script>
-    
+    <script src="scripts.js"></script>
+
 
 </body>
+
 </html>
